@@ -29,7 +29,7 @@ class people_manager_class:
             self.surname_list.remove(surname)
             self.age_list.remove(age)
         except ValueError:
-            print('The element you are trying to remove is not the dictionary')
+            print('The element you are trying to remove is not in the dictionary')
             raise
         self.update()
 
