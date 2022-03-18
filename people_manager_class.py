@@ -7,8 +7,8 @@ class people_manager_class:
 
     def add(self, name, surname, age):
         if (not isinstance(name, str) or not isinstance(surname, str) or
-        not isinstance(age, str)):
-            print("Incorrect type/s")
+        not age.isnumeric()):
+            print("Incorrect type/s. No changes have been made.")
             return
         dict = {}
         dict.update({'name':name, 'surname':surname, 'age':age})
