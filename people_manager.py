@@ -21,7 +21,8 @@ def main():
         x = input('What\'s next? Input the corrispondent number:')
         print()
 
-    people_manager.print()
+    json = people_manager.get_json()
+    print(json)
     print('Goodbye!')
 
 if __name__ == '__main__':
