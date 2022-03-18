@@ -3,27 +3,32 @@ from people_manager_class import people_manager_class
 def main():
     people_manager = people_manager_class()
     print('Available operations: 1 add, 2 remove, 3 quit \n')
-    x = input('Input the corrispondent number:')
+    operation = input('Input the corrispondent number: ')
 
-    while x != '3' and (x == '1' or x == '2'):
-        if x == '1':
-            name = input('What is the person\'s name?:')
-            surname = input('What is the person\'s surname?:')
-            age = input('What is the person\'s age?:')
+    while operation != '3' and (operation == '1' or operation == '2'):
+        if operation == '1':
+            print('Add operation:')
+            name = input('What is the person\'s name?: ')
+            surname = input('What is the person\'s surname?: ')
+            age = input('What is the person\'s age?: ')
             people_manager.add(name,surname,age)
             print()
         else:
-            name = input('What is the person\'s name?:')
-            surname = input('What is the person\'s surname?:')
-            age = input('What is the person\'s age?:')
+            print('Remove operation:')
+            name = input('What is the person\'s name?: ')
+            surname = input('What is the person\'s surname?: ')
+            age = input('What is the person\'s age?: ')
             people_manager.remove(name,surname,age)
             print()
-        x = input('What\'s next? Input the corrispondent number:')
+        operation = input('What\'s next? Input the corrispondent number: ')
         print()
+
+    if(len(people_manager.people_list) == 0):
+        print('Wrong input')
+        quit()
 
     json = people_manager.get_json()
     print(json)
-    print('Goodbye!')
 
 if __name__ == '__main__':
     main()
