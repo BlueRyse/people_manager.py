@@ -19,7 +19,8 @@ def main():
                 else:
                     print("No changes have been made.")
 
-            if people_manager.same_name_surname(name,surname):
+            if (people_manager.same_name_surname(name,surname)
+            and not people_manager.same_person_check(name,surname,age)):
                 same = input("A person with the same name has been detected in the list. Do you want to update? y/n: ")
                 if(same == 'y'):
                     people_manager.update_age(name,surname,age)
