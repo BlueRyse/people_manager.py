@@ -38,7 +38,10 @@ class people_manager_class:
 
     def same_name_surname(self,name,surname):
         for dict in self.people_list:
-            return (dict["name"] == name and dict["surname"] == surname)
+            if (dict["name"] == name and dict["surname"] == surname):
+                return True
+        return False
+
 
     def get_json(self):
         json_data = json.dumps(self.people_dict, indent=2)
